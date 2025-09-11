@@ -22,7 +22,7 @@ Install via composer:
 Place the Livewire component right after the opening body tag in your layout (for example in ```resources/views/layouts/app.blade.php```)
 ```
 <body>
-@livewire('dynamic-toasts')
+@livewire('dynamic-modal-wrappe')
 ```
 
 
