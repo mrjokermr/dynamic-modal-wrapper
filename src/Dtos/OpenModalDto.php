@@ -69,4 +69,19 @@ class OpenModalDto implements Wireable
     {
         return self::fromLivewire($value);
     }
+
+    public function __serialize(): array
+    {
+        return $this->toArray();
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $instance = self::fromLivewire($data);
+
+        $this->name = $instance->name;
+        $this->contentBackgroundColorHex = $instance->contentBackgroundColorHex;
+        $this->livewireClass = $instance->livewireClass;
+        $this->params = $instance->params;
+    }
 }
