@@ -36,13 +36,10 @@ use Mrjokermr\DynamicModalWrapper\Livewire\DynamicModalWrapper;
 
 $this->dispatch(
     DynamicModalWrapper::OPEN_EVENT,
-    (new OpenModalDto(
+    new OpenModalDto(
         livewireClass: CreateProductModal::class,
-    ))->toArray()
+    )
 );
-```
-It is required to transform the ```OpenModalDto``` to an array via ```->toArray()```.
-Since livewire 3 doesn't automatically serialize ```Wireable``` classes when dispatching events.
 
 **Passing data to the mount function:**
 ```php
@@ -51,10 +48,10 @@ use Mrjokermr\DynamicModalWrapper\Livewire\DynamicModalWrapper;
 
 $this->dispatch(
     DynamicModalWrapper::OPEN_EVENT,
-    (new OpenModalDto(
+    new OpenModalDto(
         livewireClass: CreateProductModal::class,
         params: ['id' => 12]
-    ))->toArray()
+    )
 );
 ```
 
@@ -71,7 +68,7 @@ function open()
         (new OpenModalDto(
             livewireClass: CreateProductModal::class,
             params: ['id' => 12],
-        ))->setName(name: 'create-product-modal')->toArray()
+        ))->setName(name: 'create-product-modal')
     );
 }
 
@@ -94,7 +91,7 @@ $this->dispatch(
     (new OpenModalDto(
         livewireClass: CreateProductModal::class,
         params: ['id' => 12]
-    ))->setContentBackgroundColorHex(hexColor: '#292929')->toArray() //hexColor: '292929' is also valid
+    ))->setContentBackgroundColorHex(hexColor: '#292929') //hexColor: '292929' is also valid
 );
 ```
 
