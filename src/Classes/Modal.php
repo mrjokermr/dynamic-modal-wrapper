@@ -78,4 +78,20 @@ class Modal implements Wireable
             contentBackgroundColorHex: $value['contentBackgroundColorHex'],
         ))->setId($value['id']);
     }
+
+    public function __serialize(): array
+    {
+        return $this->toLivewire();
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $instance = self::fromLivewire($data);
+
+        $this->id = $instance->id;
+        $this->livewireClass = $instance->livewireClass;
+        $this->params = $instance->params;
+        $this->name = $instance->name;
+        $this->contentBackgroundColorHex = $instance->contentBackgroundColorHex;
+    }
 }
