@@ -73,9 +73,9 @@ class Modal implements Wireable
     {
         return (new self(
             livewireClass: $value['livewireClass'],
-            params: $value['params'],
+            params: $value['params'] ?? null,
             name: $value['name'],
-            contentBackgroundColorHex: $value['contentBackgroundColorHex'],
+            contentBackgroundColorHex: $value['contentBackgroundColorHex'] ?? null,
         ))->setId($value['id']);
     }
 
