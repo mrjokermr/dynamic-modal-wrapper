@@ -46,7 +46,7 @@ class OpenModalDto implements Wireable
     {
         $openModalDto = new self(
             livewireClass: $value['livewireClass'],
-            params: $value['params'],
+            params: $value['params'] ?? null,
         );
 
         if (isset($value['name'])) {
