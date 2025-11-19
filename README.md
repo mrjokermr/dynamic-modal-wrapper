@@ -40,6 +40,7 @@ $this->dispatch(
         livewireClass: CreateProductModal::class,
     )
 );
+```
 
 **Passing data to the mount function:**
 ```php
